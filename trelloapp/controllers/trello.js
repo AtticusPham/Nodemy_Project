@@ -1,22 +1,43 @@
+const TaskModel = require('../models/task');
+
 module.exports = {
     // GET trello home /trello
     trelloApp: (req, res) => {
-        res.json("GET /trello");
+        TaskModel.find().
+        then(result => {res.json(result)}).
+        catch(err => {console.log(err);})
     },
     // GET trello /trello/edit/:id
     trelloAppEdit: (req, res) => {
-        res.json("GET /trello/edit/:id");
+        TaskModel.find({
+            _id: req.params.id
+        }).
+        then(result => {res.json(result)}).
+        catch(err => {console.log(err);})
     },
     // POST trello task /trello
     trelloAppCreate: (req, res) => {
-        res.json("POST /trello");
+        TaskModel.create(req.body).
+        then(result => {res.json(result)}).
+        catch(err => {console.log(err);})
     },
     // PUT trello task /trello/:id
     trelloAppUpdate: (req, res) => {
-        res.json("PUT /trello/:id");
+        TaskModel.updateOne({
+            _id: req.params.id
+        },{
+            title: req.body.title,
+            description: req.body.description
+        }).
+        then(result => {res.json(result)}).
+        catch(err => {console.log(err);})
     },
     // DELETE trello task /trello/:id
     trelloAppDelete: (req, res) => {
-        res.json("DELETE /trello/:id");
+        TaskModel.deleteOne({
+            _id: req.params.id
+        }).
+        then(result => {res.json(result)}).
+        catch(err => {console.log(err);})
     }
 }
