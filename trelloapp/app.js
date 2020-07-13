@@ -1,10 +1,16 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
 
-
+// connect database
+mongoose.connect('mongodb://localhost:27017/trelloapp',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).
+then(() => {console.log("database connected");}).
+catch(err => {console.log(err);})
 
 const app = express();
-
 
 // middleware
 app.use(express.json());
