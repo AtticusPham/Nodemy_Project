@@ -12,6 +12,7 @@ catch(err => {console.log(err);})
 
 const app = express();
 
+app.use(express.static('public'));
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
