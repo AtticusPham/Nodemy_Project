@@ -3,9 +3,10 @@ const Schema = mongoose.Schema;
 
 const TaskSchema = new Schema({
     title: String,
-    description: String,
-    image: [String],
-    timeCreate: Date
+    date: {
+        type: Date,
+        default: Date.now()
+    }
 },{collection: 'tasks'})
 
 module.exports = mongoose.model('task', TaskSchema);

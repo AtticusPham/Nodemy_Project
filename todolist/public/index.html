@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/home.css">
+    <script src="https://kit.fontawesome.com/04c398e0cd.js" crossorigin="anonymous"></script>
     <title>todolist</title>
 </head>
 <body>
-    <h1 class="text-success">Todolist</h1>
-    <ul id="content" class="list-group">
-        <li class="list-group-item">example</li>
-    </ul>
-    <input id="title" type="text" class="form-control" value="">
-    <input id="description" type="text" class="form-control" value="">
-    <button id="btnAddTask" class="btn btn-primary">Add</button>
+    <div id="todolist" class="border">
+        <h1 class="text-success text-center">Todolist</h1>
+        <!-- all tasks here -->
+        <div id="list">
+            <p>:(</p>
+        </div>
+
+        <div class="d-flex">
+            <input id="title" type="text" value="">
+            <button id="btnAddTask" class="btn btn-primary">Add</button>
+        </div>
+    </div>
 
     <!-- JavaScirpt -->
     <script src="./js/jquery-3.5.1.min.js"></script>
