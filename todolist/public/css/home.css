@@ -5,3 +5,9 @@
 #title {
     width: 100%;
 }
+span {
+    line-height: 45px;
+}
+p {
+    margin: 0;
+}

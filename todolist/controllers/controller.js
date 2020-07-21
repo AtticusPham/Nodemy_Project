@@ -1,11 +1,15 @@
 const TaskModel = require('../models/task');
 
 module.exports = {
-    // GET homepage todolist /todolist
+    // GET todolist /todolist
     getTodolist:  (req, res) => {
         TaskModel.find({}).
-        then(result => {res.json(result)}).
-        catch(err => {console.log(err);})
+        then(result => {
+            res.json(result);
+        }).
+        catch(err => {
+            console.log(err);
+        })
     },
     // GET  todolist /todolist/edit/:id
     getTodolistEdit:  (req, res) => {

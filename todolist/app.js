@@ -18,12 +18,14 @@ const app = express();
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('public'));
+app.use('/static', express.static('public'));
 
+
+
+app.get("/login/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public/login.html"));
+})
 app.use('/todolist', router);
 
-app.get('/', (req, res) => {
-    res.send('hello');
-})
 const PORT = 8080;
 app.listen(PORT, () => {console.log(`server ready on port ${PORT}`);});
